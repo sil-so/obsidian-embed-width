@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build artifacts (keep main.js for distribution)
+*.map
+
+# OS files
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
