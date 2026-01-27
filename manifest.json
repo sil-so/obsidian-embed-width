@@ -4,6 +4,6 @@
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
   "description": "Adds data-width attributes to embeds based on aliases (e.g. [[note|wide]]) in Live Preview.",
-  "author": "sil",
+  "author": "Silso",
   "isDesktopOnly": false
 }
