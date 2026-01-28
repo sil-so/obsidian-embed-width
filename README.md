@@ -84,6 +84,12 @@ This plugin only adds the attribute — you need CSS to define what each width m
 
 Width alias concept inspired by [Minimal Theme](https://github.com/kepano/obsidian-minimal) by [@kepano](https://github.com/kepano).
 
+## Images
+
+<img width="1514" height="951" alt="SCR-20260128-ntha" src="https://github.com/user-attachments/assets/17d4c933-3a8e-41e4-bffb-77f2d84381b0" />
+
+<img width="1514" height="951" alt="SCR-20260128-ntmu" src="https://github.com/user-attachments/assets/9ee03c64-34d5-4692-98da-d35e299c2cc5" />
+
 ## License
 
 [MIT](LICENSE)
