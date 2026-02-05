@@ -33,11 +33,41 @@ var EmbedWidthAdjuster = class extends import_obsidian.Plugin {
 var embedWidthViewPlugin = import_view.ViewPlugin.fromClass(
   class {
     constructor(view) {
+      this.observer = null;
+      this.pendingUpdate = null;
+      this.view = view;
+      this.setupObserver(view);
       this.updateEmbeds(view);
     }
+    setupObserver(view) {
+      this.observer = new MutationObserver(() => {
+        if (this.pendingUpdate) {
+          cancelAnimationFrame(this.pendingUpdate);
+        }
+        this.pendingUpdate = requestAnimationFrame(() => {
+          this.pendingUpdate = null;
+          this.updateEmbeds(this.view);
+        });
+      });
+      this.observer.observe(view.contentDOM, {
+        childList: true,
+        subtree: true
+      });
+    }
     update(update) {
+      this.view = update.view;
       if (update.docChanged || update.viewportChanged || update.geometryChanged || update.focusChanged) {
         this.updateEmbeds(update.view);
+      }
+    }
+    destroy() {
+      if (this.observer) {
+        this.observer.disconnect();
+        this.observer = null;
+      }
+      if (this.pendingUpdate) {
+        cancelAnimationFrame(this.pendingUpdate);
+        this.pendingUpdate = null;
       }
     }
     updateEmbeds(view) {
