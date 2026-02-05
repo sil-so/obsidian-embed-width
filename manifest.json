@@ -1,7 +1,7 @@
 {
   "id": "embed-width-adjuster",
   "name": "Embed Width Adjuster",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minAppVersion": "0.15.0",
   "description": "Adds data-width attributes to embeds based on aliases (e.g. [[note|wide]]) in Live Preview.",
   "author": "Silso",
